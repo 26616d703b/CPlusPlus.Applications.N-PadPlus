@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>865</width>
+    <height>574</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Courier</family>
+    <pointsize>9</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>N-Pad+</string>
+  </property>
+  <widget class="QWidget" name="central_widget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QMdiArea" name="central_area">
+      <property name="background">
+       <brush brushstyle="Dense4Pattern">
+        <color alpha="255">
+         <red>160</red>
+         <green>160</green>
+         <blue>160</blue>
+        </color>
+       </brush>
+      </property>
+      <property name="activationOrder">
+       <enum>QMdiArea::StackingOrder</enum>
+      </property>
+      <property name="viewMode">
+       <enum>QMdiArea::TabbedView</enum>
+      </property>
+      <property name="tabPosition">
+       <enum>QTabWidget::South</enum>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menu_bar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>865</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Courier</family>
+    </font>
+   </property>
+   <property name="nativeMenuBar">
+    <bool>false</bool>
+   </property>
+   <widget class="QMenu" name="file_menu">
+    <property name="title">
+     <string>&amp;Fichier</string>
+    </property>
+    <addaction name="new_action"/>
+    <addaction name="open_action"/>
+    <addaction name="separator"/>
+    <addaction name="save_action"/>
+    <addaction name="save_as_action"/>
+    <addaction name="separator"/>
+    <addaction name="print_action"/>
+    <addaction name="separator"/>
+    <addaction name="exit_action"/>
+   </widget>
+   <widget class="QMenu" name="edition_menu">
+    <property name="title">
+     <string>&amp;Edition</string>
+    </property>
+    <addaction name="undo_action"/>
+    <addaction name="redo_action"/>
+    <addaction name="separator"/>
+    <addaction name="cut_action"/>
+    <addaction name="copy_action"/>
+    <addaction name="paste_action"/>
+    <addaction name="remove_action"/>
+    <addaction name="separator"/>
+    <addaction name="find_action"/>
+    <addaction name="replace_action"/>
+    <addaction name="reach_action"/>
+    <addaction name="select_all_action"/>
+    <addaction name="date_action"/>
+   </widget>
+   <widget class="QMenu" name="preferences_menu">
+    <property name="title">
+     <string>&amp;Préférences</string>
+    </property>
+    <addaction name="automatic_return_to_the_line_action"/>
+    <addaction name="font_action"/>
+    <addaction name="parameters_action"/>
+   </widget>
+   <widget class="QMenu" name="display_menu">
+    <property name="title">
+     <string>&amp;Affichage</string>
+    </property>
+    <addaction name="toolbar_action"/>
+    <addaction name="statusbar_action"/>
+   </widget>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>&amp;?</string>
+    </property>
+    <addaction name="about_action"/>
+   </widget>
+   <addaction name="file_menu"/>
+   <addaction name="edition_menu"/>
+   <addaction name="preferences_menu"/>
+   <addaction name="display_menu"/>
+   <addaction name="menu"/>
+  </widget>
+  <widget class="QToolBar" name="main_toolbar">
+   <property name="font">
+    <font>
+     <family>Courier</family>
+    </font>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>RightToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="font">
+    <font>
+     <family>Courier</family>
+    </font>
+   </property>
+  </widget>
+  <action name="new_action">
+   <property name="icon">
+    <iconset>
+     <normaloff>res/icon/menu/file/add_file-32.png</normaloff>res/icon/menu/file/add_file-32.png</iconset>
+   </property>
+   <property name="text">
+    <string>Nouveau</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Courier</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="open_action">
+   <property name="icon">
+    <iconset>
+     <normaloff>res/icon/menu/file/open_in_browser-32.png</normaloff>res/icon/menu/file/open_in_browser-32.png</iconset>
+   </property>
+   <property name="text">
+    <string>Ouvrir</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Courier</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="save_action">
+   <property name="icon">
+    <iconset>
+     <normaloff>res/icon/menu/file/save-32.png</normaloff>res/icon/menu/file/save-32.png</iconset>
+   </property>
+   <property name="text">
+    <string>Enregistrer</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Courier</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="save_as_action">
+   <property name="icon">
+    <iconset>
+     <normaloff>res/icon/menu/file/save_as-32.png</normaloff>res/icon/menu/file/save_as-32.png</iconset>
+   </property>
+   <property name="text">
+    <string>Enregistrer sous</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Courier</family>
+     <pointsize>9</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+  </action>
+  <action name="print_action">
+   <property name="icon">
+    <iconset>
+     <normaloff>res/icon/menu/file/print-32.png</normaloff>res/icon/menu/file/print-32.png</iconset>
+   </property>
+   <property name="text">
+    <string>Imprimer</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Courier</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::ApplicationShortcut</enum>
+   </property>
+  </action>
+  <action name="exit_action">
+   <property name="icon">
+    <iconset>
+     <normaloff>res/icon/menu/file/switch_off-32.png</normaloff>res/icon/menu/file/switch_off-32.png</iconset>
+   </property>
+   <property name="text">
+    <string>Quitter</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Courier</family>
+     <pointsize>9</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="undo_action">
+   <property name="icon">
+    <iconset>
+     <normaloff>res/icon/menu/edition/undo-32.png</normaloff>res/icon/menu/edition/undo-32.png</iconset>
+   </property>
+   <property name="text">
+    <string>Annuler</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Courier</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="redo_action">
+   <property name="icon">
+    <iconset>
+     <normaloff>res/icon/menu/edition/redo-32.png</normaloff>res/icon/menu/edition/redo-32.png</iconset>
+   </property>
+   <property name="text">
+    <string>Rétablir</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Courier</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Y</string>
+   </property>
+  </action>
+  <action name="cut_action">
+   <property name="icon">
+    <iconset>
+     <normaloff>res/icon/menu/edition/cut-32.png</normaloff>res/icon/menu/edition/cut-32.png</iconset>
+   </property>
+   <property name="text">
+    <string>Couper</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Courier</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
+   </property>
+  </action>
+  <action name="copy_action">
+   <property name="icon">
+    <iconset>
+     <normaloff>res/icon/menu/edition/copy-32.png</normaloff>res/icon/menu/edition/copy-32.png</iconset>
+   </property>
+   <property name="text">
+    <string>Copier</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Courier</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="paste_action">
+   <property name="icon">
+    <iconset>
+     <normaloff>res/icon/menu/edition/paste-32.png</normaloff>res/icon/menu/edition/paste-32.png</iconset>
+   </property>
+   <property name="text">
+    <string>Coller</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Courier</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
+   </property>
+  </action>
+  <action name="remove_action">
+   <property name="icon">
+    <iconset>
+     <normaloff>res/icon/menu/edition/delete-32.png</normaloff>res/icon/menu/edition/delete-32.png</iconset>
+   </property>
+   <property name="text">
+    <string>Supprimer</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Courier</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Del</string>
+   </property>
+  </action>
+  <action name="find_action">
+   <property name="icon">
+    <iconset>
+     <normaloff>res/icon/menu/edition/search-32.png</normaloff>res/icon/menu/edition/search-32.png</iconset>
+   </property>
+   <property name="text">
+    <string>Rechercher</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Courier</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
+   </property>
+  </action>
+  <action name="replace_action">
+   <property name="icon">
+    <iconset>
+     <normaloff>res/icon/menu/edition/available_updates-32.png</normaloff>res/icon/menu/edition/available_updates-32.png</iconset>
+   </property>
+   <property name="text">
+    <string>Remplacer</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Courier</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="reach_action">
+   <property name="icon">
+    <iconset>
+     <normaloff>res/icon/menu/edition/cursor-32.png</normaloff>res/icon/menu/edition/cursor-32.png</iconset>
+   </property>
+   <property name="text">
+    <string>Atteindre</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Courier</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="select_all_action">
+   <property name="icon">
+    <iconset>
+     <normaloff>res/icon/menu/edition/select_all-32.png</normaloff>res/icon/menu/edition/select_all-32.png</iconset>
+   </property>
+   <property name="text">
+    <string>Selectionner tout</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Courier</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
+   </property>
+  </action>
+  <action name="date_action">
+   <property name="icon">
+    <iconset>
+     <normaloff>res/icon/menu/edition/date_from-32.png</normaloff>res/icon/menu/edition/date_from-32.png</iconset>
+   </property>
+   <property name="text">
+    <string>Date</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Courier</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>F5</string>
+   </property>
+  </action>
+  <action name="automatic_return_to_the_line_action">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Retour automatique à la ligne</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Courier</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="font_action">
+   <property name="icon">
+    <iconset>
+     <normaloff>res/icon/menu/preferences/generic_text-32.png</normaloff>res/icon/menu/preferences/generic_text-32.png</iconset>
+   </property>
+   <property name="text">
+    <string>Police</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Courier</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="toolbar_action">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Barre d'outils</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Courier</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="statusbar_action">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Barre d'état</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Courier</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="about_action">
+   <property name="icon">
+    <iconset>
+     <normaloff>res/icon/menu/help/about-32.png</normaloff>res/icon/menu/help/about-32.png</iconset>
+   </property>
+   <property name="text">
+    <string>A propos de NotePad</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Courier</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
+  </action>
+  <action name="parameters_action">
+   <property name="icon">
+    <iconset>
+     <normaloff>res/icon/menu/preferences/settings-32.png</normaloff>res/icon/menu/preferences/settings-32.png</iconset>
+   </property>
+   <property name="text">
+    <string>Paramètres</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
